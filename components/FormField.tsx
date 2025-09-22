@@ -1,28 +1,28 @@
-import { Button } from "@/components/ui/button";
+import { Controller, Control, FieldValues, Path } from "react-hook-form";
+
 import {
-  FormControl,
   FormItem,
   FormLabel,
+  FormControl,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Control, Controller, FieldValues } from "react-hook-form";
 
 interface FormFieldProps<T extends FieldValues> {
   control: Control<T>;
   name: Path<T>;
   label: string;
   placeholder?: string;
-  type?: "text" | "email" | "password" | "file";
+  type?: "text" | "email" | "password";
 }
 
-export default function FormField({
+const FormField = <T extends FieldValues>({
   control,
   name,
   label,
   placeholder,
   type = "text",
-}: FormFieldProps<T>) {
+}: FormFieldProps<T>) => {
   return (
     <Controller
       control={control}
@@ -31,11 +31,18 @@ export default function FormField({
         <FormItem>
           <FormLabel className="label">{label}</FormLabel>
           <FormControl>
-            <Input className="input" placeholder={placeholder} type={type} {...field} />
+            <Input
+              className="input"
+              type={type}
+              placeholder={placeholder}
+              {...field}
+            />
           </FormControl>
           <FormMessage />
         </FormItem>
       )}
     />
   );
-}
+};
+
+export default FormField;
