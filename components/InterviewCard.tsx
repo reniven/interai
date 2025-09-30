@@ -6,13 +6,13 @@ import Link from "next/link";
 import DisplayTechIcons from "./DisplayTechIcons";
 
 export default function InterviewCard({
-  interviewId,
+  id,
   userId,
   role,
   type,
   techstack,
   createdAt,
-}: InterviewCardProps) {
+}: InterviewCardProps) { 
   const feedback = null as Feedback | null;
   const normalizedType = /mix/gi.test(type) ? "Mixed" : type;
   const formattedDate = dayjs(
@@ -66,8 +66,8 @@ export default function InterviewCard({
             <Link
               href={
                 feedback
-                  ? `/interview/${interviewId}/feedback`
-                  : `/interview/${interviewId}`
+                  ? `/interview/${id}/feedback`
+                  : `/interview/${id}`
               }
             >
               {feedback ? "Check Feedback" : "View Interview"}

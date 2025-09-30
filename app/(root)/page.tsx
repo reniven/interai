@@ -1,22 +1,20 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { dummyInterviews } from "@/constants";
 import InterviewCard from "@/components/InterviewCard";
+import { getCurrentUser } from "@/lib/actions/auth.actions";
 import {
-  getCurrentUser,
   getInterviewByUserId,
   getLatestInterviews,
-} from "@/lib/actions/auth.actions";
+} from "@/lib/actions/general.actions";
 
 export default async function Home() {
   const user = await getCurrentUser();
 
   const [userInterviews, latestInterviews] = await Promise.all([
     await getInterviewByUserId(user?.id!),
-    await getLatestInterviews({ userId: user?.id!})
+    await getLatestInterviews({ userId: user?.id! }),
   ]);
-
 
   const hasPastInterviews = userInterviews?.length! > 0;
   const hasUpcomingInterviews = latestInterviews?.length! > 0;
@@ -61,7 +59,7 @@ export default async function Home() {
         <h2>Take an interview</h2>
 
         <div className="interviews-section">
-         {hasUpcomingInterviews ? (
+          {hasUpcomingInterviews ? (
             latestInterviews?.map((interview) => (
               <InterviewCard {...interview} key={interview.id} />
             ))
