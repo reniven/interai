@@ -104,13 +104,23 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 md:py-28 px-4 scroll-mt-20">
+    <section
+      id="features"
+      className="py-20 md:py-28 px-4 scroll-mt-20"
+      style={{ backgroundColor: "#fafaf9" }}
+    >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground text-balance">
+          <h2
+            className="text-3xl md:text-4xl font-bold text-balance"
+            style={{ color: "#1c1917" }}
+          >
             Everything you need to ace your interview
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+          <p
+            className="mt-4 text-lg max-w-2xl mx-auto text-pretty"
+            style={{ color: "#78716c" }}
+          >
             Built for job seekers who want to walk into their next interview
             feeling prepared, polished, and unstoppable.
           </p>
@@ -120,15 +130,25 @@ export default function Features() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="flex flex-col gap-4 p-8 rounded-2xl bg-card border border-border shadow-sm hover:shadow-md transition-shadow"
+              className="flex flex-col gap-4 p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+              style={{
+                backgroundColor: "#ffffff",
+                border: "1px solid #e7e5e4",
+              }}
             >
-              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-accent text-accent-foreground">
+              <div
+                className="flex items-center justify-center w-12 h-12 rounded-xl"
+                style={{ backgroundColor: "#FEF3C7", color: "#92400E" }}
+              >
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold text-foreground">
+              <h3
+                className="text-xl font-semibold"
+                style={{ color: "#1c1917" }}
+              >
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="leading-relaxed" style={{ color: "#78716c" }}>
                 {feature.description}
               </p>
             </div>

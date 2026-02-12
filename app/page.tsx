@@ -7,7 +7,7 @@ import Footer from "@/components/landing/Footer";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#fafaf9", color: "#1c1917" }}>
       <Header />
       <main className="flex-1">
         <Hero />
