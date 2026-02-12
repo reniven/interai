@@ -9,11 +9,11 @@ export default async function Layout({ children }: { children: ReactNode }) {
 
   if (!isUserAuthenticated) redirect("/sign-in");
   return (
-    <div className="root-layer">
+    <div className="root-layout">
       <nav>
-        <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.svg" alt="logo" width={38} height={32} />
-          <h2 className="text-primary-100">Interai</h2>
+        <Link href="/dashboard" className="flex items-center gap-2">
+          <Image src="/logo.svg" alt="InterAI logo" width={38} height={32} />
+          <h2 className="text-primary-200">InterAI</h2>
         </Link>
       </nav>
 

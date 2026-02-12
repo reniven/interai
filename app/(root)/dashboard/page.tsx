@@ -8,7 +8,7 @@ import {
   getLatestInterviews,
 } from "@/lib/actions/general.actions";
 
-export default async function Home() {
+export default async function Dashboard() {
   const user = await getCurrentUser();
 
   const [userInterviews, latestInterviews] = await Promise.all([
@@ -55,7 +55,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col  gap-6 mt-8">
+      <section className="flex flex-col gap-6 mt-8">
         <h2>Take an interview</h2>
 
         <div className="interviews-section">
