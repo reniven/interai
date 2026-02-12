@@ -88,14 +88,14 @@ export default function Agent({
       router.push(`/interview/${interviewId}/feedback`);
     } else {
       console.log("Error saving feedback");
-      router.push("/");
+      router.push("/dashboard");
     }
   };
 
   useEffect(() => {
     if (callStatus === CallStatus.FINISHED) {
       if (type === "generate") {
-        router.push("/");
+        router.push("/dashboard");
       } else {
         handleGenerateFeedback(messages);
       }

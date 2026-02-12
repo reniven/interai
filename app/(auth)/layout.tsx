@@ -9,6 +9,6 @@ export default async function AuthLayout({
 }) {
   const isUserAuthenticated = await isAuthenticated();
 
-  if (isUserAuthenticated) redirect("/");
+  if (isUserAuthenticated) redirect("/dashboard");
   return <div className="auth-layout">{children}</div>;
 }

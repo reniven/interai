@@ -12,7 +12,7 @@ const page = async ({ params }: RouteParams) => {
   const user = await getCurrentUser();
   const interview = await getInterviewById(id);
 
-  if (!interview) redirect("/");
+  if (!interview) redirect("/dashboard");
 
   return (
     <>
@@ -31,14 +31,14 @@ const page = async ({ params }: RouteParams) => {
           </div>
           <DisplayTechIcons techStack={interview.techstack} />
         </div>
-        <p className="bg-dark-200 px-4 py-2 rounded-lg h-fit capitalize">
+        <p className="bg-accent text-accent-foreground px-4 py-2 rounded-lg h-fit capitalize">
           {interview.type}
         </p>
       </div>
 
       <Agent
         userName={user?.name}
-        type={user?.id}
+        userId={user?.id}
         interviewId={id}
         type="interview"
         questions={interview.questions}
